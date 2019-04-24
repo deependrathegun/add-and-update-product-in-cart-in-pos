@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:numpad="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="30dp"
+    android:layout_height="10dp"
+    android:orientation="horizontal"
+    android:layout_gravity="right">
+
+
+
+    <ImageView
+        android:id="@+id/quantity_dialog_close"
+        android:src="@drawable/ic_black_close_icons"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+    <EditText
+        android:id="@+id/edt_txt_quantity"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:background="@drawable/login_text_border"
+        android:layout_margin="5dp"
+        android:focusable="false"
+        android:text="quantity"
+        android:textSize="12sp"/>
+
+
+
+    <com.fxn769.Numpad
+        android:id="@+id/num"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        numpad:numpad_background_resource="@drawable/numpad_background"
+        numpad:numpad_fontpath="fonts/custom_font.ttf"
+        numpad:numpad_grid_background_color="@color/gray"
+        numpad:numpad_grid_line_thickness="1dp"
+        numpad:numpad_grid_visible="true"
+        numpad:numpad_image_resource="@drawable/ic_backspace"
+        numpad:numpad_text_color="#000000"
+        numpad:numpad_text_limit="20"
+        numpad:numpad_text_size="18dp"
+        numpad:numpad_comma="." />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/dialog_add_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Add to cart"
+        android:background="@color/colorPrimary"/>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/dialog_update_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Update"
+         android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/dialog_apply_discount"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Apply"
+        android:visibility="gone"/>
+
+
+</LinearLayout>

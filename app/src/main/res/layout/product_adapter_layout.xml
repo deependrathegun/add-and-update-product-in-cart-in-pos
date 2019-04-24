@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="8dp"
+    android:layout_marginBottom="16dp"
+    card_view:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:id="@+id/add_item_click"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/android_gridview_image"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_height="150dp"
+            android:src="@drawable/bag"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/android_gridview_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="thegun"
+            android:textColor="#000"
+            android:background="#fff"/>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
