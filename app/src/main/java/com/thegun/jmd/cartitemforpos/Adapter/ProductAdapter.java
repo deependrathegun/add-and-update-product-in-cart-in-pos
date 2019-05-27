@@ -57,10 +57,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         viewHolder.productImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(context,AddItemCartAdapter.class);
-                intent.putExtra("name",productsArray.get(position).getProductName());
-                intent.putExtra("price",productsArray.get(position).getPrice());
-                context.startActivity(intent);*/
+               
                 final Dialog dialog12 = new Dialog(context);
 
                 dialog12.setContentView(R.layout.dialog_custom_keyboard);
@@ -93,30 +90,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     public void onClick(View v) {
                         mCallBackus.addCartItemView();
                         productsArray.get(i).quantity=(edtTextQuantity.getText().toString());
-                        /*if (viewHolder.productImage.isSelected() == true){
-                            //Toast.makeText(context, "Already added in cart", Toast.LENGTH_SHORT).show();
-                            for (int j=0;j<AddItemCartAdapter.reports.size();j++) {
-                                if (productsArray.get(i).productName.equals(AddItemCartAdapter.reports.get(j).getProductName())) {
-                                    AddItemCartModel addItemCartModel = new AddItemCartModel();
-                                    addItemCartModel.setProductName(productsArray.get(i).productName);
-                                    addItemCartModel.setProductPrice(productsArray.get(i).price);
-                                    addItemCartModel.setQuantity(productsArray.get(i).quantity);
-                                    AddItemCartAdapter.reports.set(i,addItemCartModel);
-                                }
-                            }
-                            //holder.productImage.setSelected(true);
-                        }
-                *//*if (AddItemCartAdapter.reports.size()!=-1) {
-                    holder.productImage.setClickable(false);
-                }*//*
-                        else {
-                            AddItemCartModel addItemCartModel = new AddItemCartModel();
-                            addItemCartModel.setProductName(productsArray.get(i).productName);
-                            addItemCartModel.setProductPrice(productsArray.get(i).price);
-                            addItemCartModel.setQuantity(productsArray.get(i).quantity);
-                            AddItemCartAdapter.reports.add(addItemCartModel);
-                            viewHolder.productImage.setSelected(true);
-                        }*/
+                      
 
                         AddItemCartModel addItemCartModel = new AddItemCartModel();
                         addItemCartModel.setProductName(productsArray.get(i).getProductName());
