@@ -19,6 +19,7 @@
         android:orientation="vertical"
         android:layout_weight="1">
         <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
             android:layout_marginTop="5dp"
             android:id="@+id/cart_recycler_view"
             android:layout_width="match_parent"
@@ -26,6 +27,12 @@
             android:orientation="vertical"
             android:layout_weight="2"
             android:background="@drawable/custom_button_border"></android.support.v7.widget.RecyclerView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cart_fragment"></FrameLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

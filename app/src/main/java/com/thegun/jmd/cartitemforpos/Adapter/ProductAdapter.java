@@ -3,7 +3,10 @@ package com.thegun.jmd.cartitemforpos.Adapter;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,11 +17,14 @@ import android.widget.TextView;
 
 import com.fxn769.Numpad;
 import com.fxn769.TextGetListner;
+import com.thegun.jmd.cartitemforpos.Fragment.CartFragment;
 import com.thegun.jmd.cartitemforpos.Model.AddItemCartModel;
 import com.thegun.jmd.cartitemforpos.Model.ProductModel;
 import com.thegun.jmd.cartitemforpos.R;
 
 import java.util.ArrayList;
+
+import static com.thegun.jmd.cartitemforpos.Fragment.CartFragment.addItemCartArray;
 
 /**
  * Created by Deependra Singh Patel on 24/4/19.
@@ -87,7 +93,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     public void onClick(View v) {
                         mCallBackus.addCartItemView();
                         productsArray.get(i).quantity=(edtTextQuantity.getText().toString());
-                        if (viewHolder.productImage.isSelected() == true){
+                        /*if (viewHolder.productImage.isSelected() == true){
                             //Toast.makeText(context, "Already added in cart", Toast.LENGTH_SHORT).show();
                             for (int j=0;j<AddItemCartAdapter.reports.size();j++) {
                                 if (productsArray.get(i).productName.equals(AddItemCartAdapter.reports.get(j).getProductName())) {
@@ -100,9 +106,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                             }
                             //holder.productImage.setSelected(true);
                         }
-                /*if (AddItemCartAdapter.reports.size()!=-1) {
+                *//*if (AddItemCartAdapter.reports.size()!=-1) {
                     holder.productImage.setClickable(false);
-                }*/
+                }*//*
                         else {
                             AddItemCartModel addItemCartModel = new AddItemCartModel();
                             addItemCartModel.setProductName(productsArray.get(i).productName);
@@ -110,7 +116,25 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                             addItemCartModel.setQuantity(productsArray.get(i).quantity);
                             AddItemCartAdapter.reports.add(addItemCartModel);
                             viewHolder.productImage.setSelected(true);
-                        }
+                        }*/
+
+                        AddItemCartModel addItemCartModel = new AddItemCartModel();
+                        addItemCartModel.setProductName(productsArray.get(i).getProductName());
+                        addItemCartModel.setProductPrice(productsArray.get(i).getPrice());
+                        addItemCartModel.setQuantity(productsArray.get(i).getQuantity());
+                        addItemCartArray.add(addItemCartModel);
+                        // AddItemCartAdapter.reports.add(addItemCartModel);
+                        // holder.productImage.setSelected(true);
+
+
+                        //}
+
+                        CartFragment fragment2 = new CartFragment();
+                        FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.cart_fragment, fragment2);
+                        fragmentTransaction.commit();
 
 
                         dialog12.dismiss();

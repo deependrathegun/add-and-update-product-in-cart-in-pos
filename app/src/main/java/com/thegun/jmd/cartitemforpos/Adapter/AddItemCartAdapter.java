@@ -68,7 +68,7 @@ public class AddItemCartAdapter extends RecyclerView.Adapter<AddItemCartAdapter.
         MainActivity.subTotal.setText(String.valueOf(sumSubTotal));
 
 
-        holder.quantity.setOnClickListener(new View.OnClickListener() {
+        holder.editQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Dialog dialog12 = new Dialog(context);
@@ -154,14 +154,14 @@ public class AddItemCartAdapter extends RecyclerView.Adapter<AddItemCartAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView itemName,itemPrice, quantity;
-        ImageView removeSingleItemFromCart;
-
+        ImageView editQuantity;
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemName = (TextView) itemView.findViewById(R.id.itemName);
             itemPrice = (TextView)itemView.findViewById(R.id.itemPrice);
             quantity = (TextView)itemView.findViewById(R.id.multi);
+            editQuantity = itemView.findViewById(R.id.edit_quantity_image);
 
         }
     }
